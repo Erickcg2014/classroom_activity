@@ -1,13 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('registerForm');
 
+    if (!registerForm) {
+        console.error('El formulario de registro no se encontró en el DOM.');
+        return;
+    }
+
     registerForm.addEventListener('submit', async (event) => {
         event.preventDefault(); // Evita que el formulario se envíe de la forma tradicional
 
         const nombre = document.getElementById('nombre').value.trim().toLowerCase();
         
         // Obtener el valor del género seleccionado
-        const genero = document.querySelector('input[name="genero"]:checked')?.value;
+        const generoElement = document.querySelector('input[name="genero"]:checked');
+        const genero = generoElement ? generoElement.value : null;
 
         if (!nombre) {
             alert('Por favor, ingresa tu nombre.');

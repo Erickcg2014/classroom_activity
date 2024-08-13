@@ -15,11 +15,11 @@ const io = socketIo(server);
 const port = 3000;
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
-    user: process.env.DB_USER || 'postgres',  // Usuario de la base de datos
-    host: process.env.DB_HOST || 'localhost',  // Dirección del servidor de la base de datos
-    database: process.env.DB_NAME || 'postgres',  // Nombre de la base de datos
-    password: process.env.DB_PASSWORD || 'password',  // Contraseña del usuario de la base de datos
-    port: process.env.DB_PORT || 5432,  // Puerto de la base de datos
+    user: process.env.DB_USER || 'postgres',
+    host: process.env.DB_HOST || 'localhost',
+    database: process.env.DB_NAME || 'postgres',  
+    password: process.env.DB_PASSWORD || 'nueva_contraseña',
+    port: process.env.DB_PORT || 5432,
 });
 
 
@@ -53,25 +53,27 @@ io.on('connection', (socket) => {
 });
 
 
-
-
-
 // Ruta para registrar un estudiante
 app.post('/register', async (req, res) => {
     const { nombre, genero } = req.body;
 
     try {
+        console.log(`Registrando estudiante: ${nombre}, Género: ${genero}`);
+
         const checkUser = await pool.query('SELECT * FROM estudiantes WHERE nombre = $1', [nombre]);
 
         if (checkUser.rows.length > 0) {
+            console.log('El nombre de usuario ya existe.');
             return res.status(400).send('El nombre de usuario ya existe. Por favor, elige otro nombre.');
         }
 
         const carpetaGenero = genero === 'hombre' ? 'Hombre' : 'Mujer';
+        console.log(`Buscando imágenes en: public/images/${carpetaGenero}`);
         const imagenes = fs.readdirSync(path.join(__dirname, `public/images/${carpetaGenero}`));
         const imagenAleatoria = imagenes[Math.floor(Math.random() * imagenes.length)];
         const imagenUrl = `/images/${carpetaGenero}/${imagenAleatoria}`;
 
+        console.log(`Insertando en la base de datos: Nombre: ${nombre}, Género: ${genero}, Imagen: ${imagenUrl}`);
         await pool.query('INSERT INTO estudiantes (nombre, genero, imagen) VALUES ($1, $2, $3)', [nombre, genero, imagenUrl]);
 
         // Guardar el nombre en la sesión
