@@ -15,12 +15,13 @@ const io = socketIo(server);
 const port = 3000;
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
-    user: 'postgres',
-    host: 'localhost',
-    database: 'postgres',  
-    password: '#Mancity2004',
-    port: 5432,
+    user: process.env.DB_USER || 'postgres',  // Usuario de la base de datos
+    host: process.env.DB_HOST || 'localhost',  // Dirección del servidor de la base de datos
+    database: process.env.DB_NAME || 'postgres',  // Nombre de la base de datos
+    password: process.env.DB_PASSWORD || 'password',  // Contraseña del usuario de la base de datos
+    port: process.env.DB_PORT || 5432,  // Puerto de la base de datos
 });
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
