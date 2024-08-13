@@ -15,11 +15,11 @@ const io = socketIo(server);
 const port = 3000;
 // Configuración de la conexión a la base de datos PostgreSQL
 const pool = new Pool({
-    user: process.env.DB_USER || 'postgres',
-    host: process.env.DB_HOST || 'localhost',
-    database: process.env.DB_NAME || 'postgres',  
-    password: process.env.DB_PASSWORD || 'nueva_contraseña',
-    port: process.env.DB_PORT || 5432,
+    user: process.env.PGUSER,
+    host: process.env.PGHOST,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
 });
 
 
