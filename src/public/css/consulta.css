@@ -1,0 +1,124 @@
+/* Importar fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap');
+
+/* Estilos generales */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.consulta-container {
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+/* Títulos */
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-size: 2.5em;
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #667eea;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.8em;
+}
+
+/* Formulario */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+button {
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Animación para el título principal */
+@keyframes colorChange {
+    0% { color: #4a4a4a; }
+    50% { color: #667eea; }
+    100% { color: #4a4a4a; }
+}
+
+h1 {
+    animation: colorChange 5s infinite;
+}
+
+/* Decoración adicional */
+.consulta-container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4, #ffecd2);
+    z-index: -1;
+    filter: blur(20px);
+    border-radius: 20px;
+    opacity: 0.7;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .consulta-container {
+        padding: 20px;
+    }
+    input, button {
+        font-size: 14px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.5em;
+    }
+}

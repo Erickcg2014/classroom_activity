@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad de Relaciones</title>
+    <link rel="stylesheet" href="/css/relaciones.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Escribe un mensaje para tu compañero</h2>
+        <div id="mensajeContainer">
+            <p id="compañeroNombre">Estás escribiendo a: [Nombre del Compañero]</p>
+            <textarea id="mensaje" placeholder="Escribe cualidades como..."></textarea>
+            <button id="enviarMensaje">Enviar Mensaje</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/relaciones.js"></script>
+</body>
+</html>

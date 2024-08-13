@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudiantes</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+    
+    <div class="container"><div id="registro" style="display: block;">
+        <h2>Registro de Estudiantes</h2>
+        <form id="registerForm">
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre" required>
+            <div class="gender-selection">
+                <label>
+                    <input type="radio" name="genero" value="hombre" required>
+                    <i class="fas fa-male"></i> Hombre
+                </label>
+                <label>
+                    <input type="radio" name="genero" value="mujer" required>
+                    <i class="fas fa-female"></i> Mujer
+                </label>
+            </div>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+
+    <div id="actividad" style="display: none;">
+        <h2>Estudiantes Registrados</h2>
+        <ul id="listaEstudiantes">
+            <!-- Lista de estudiantes se cargará aquí -->
+        </ul>
+    </div>
+
+    <div id="espera" style="display: none;">
+        <h2>Esperando a que todos se registren...</h2>
+        <p>Por favor espera mientras los demás se registran.</p>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
+
+

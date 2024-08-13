@@ -1,0 +1,119 @@
+/* Estilos generales para la página de actividad de relaciones */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Pacifico', cursive;
+    color: #4a4a4a;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    font-size: 2.5em;
+    animation: colorChange 5s infinite;
+}
+
+#contador {
+    font-size: 0.9em;
+    color: #667eea;
+    margin-top: 10px;
+    text-align: right;
+}
+
+/* Contenedor del mensaje */
+#mensajeContainer {
+    margin-top: 20px;
+}
+
+#compañeroNombre {
+    font-size: 1.5em;
+    color: #667eea;
+    margin-bottom: 20px;
+}
+
+/* Estilo del textarea para escribir el mensaje */
+#mensaje {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.2em;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#mensaje:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+}
+
+/* Botón de enviar mensaje */
+#enviarMensaje {
+    margin-top: 20px;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: #FFF;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.5em;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+#enviarMensaje:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+/* Animación para el título */
+@keyframes colorChange {
+    0% { color: #4a4a4a; }
+    50% { color: #667eea; }
+    100% { color: #4a4a4a; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    #mensaje {
+        font-size: 1em;
+        min-height: 120px;
+    }
+
+    #enviarMensaje {
+        font-size: 1.2em;
+        padding: 12px 25px;
+    }
+}

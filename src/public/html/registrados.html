@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudiantes Registrados</title>
+    <link rel="stylesheet" href="/css/registrados.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Estudiantes Registrados</h2>
+        <ul id="listaEstudiantes"></ul>
+        
+        <button id="btnSiguientePaso" style="display: none;">Dar al siguiente paso</button>
+    </div>
+
+    <!-- Incluir el script de Socket.IO antes de tu script personalizado -->
+    <script src="/socket.io/socket.io.js"></script> 
+    <script src="/js/registrados.js"></script>
+</body>
+</html>
